@@ -6,6 +6,8 @@ var dependentType = 'single'; // 世帯タイプ初期値
 var baseKoujo = Taxes.baseKoujo; // 住民税基礎控除
 var huyoKoujo = Taxes.huyoKoujo; // 一人分の扶養控除
 var taxRate = Taxes.taxRate; // 住民税率
+var Kintou = Taxes.Kintou; // 均等割
+
 
 var formatCurrency = function (val, prec, sym, dec, sep) {
   prec = prec === undefined ? 2 : prec
@@ -112,7 +114,7 @@ OpenSpending.DailyBread = function (elem) {
 
   this.setSalary = function (salary) {
     self.salaryVal = salary
-    self.taxVal = (salary - (baseKoujo + (dependentType == 'family' ? huyoKoujo : 0))) * taxRate;
+    self.taxVal = Kintou + (salary - (baseKoujo + (dependentType == 'family' ? huyoKoujo : 0))) * taxRate;
   }
 
   this.draw = function () {
