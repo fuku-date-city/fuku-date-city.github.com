@@ -11,8 +11,11 @@ Taxes.Kintou = 3000; // 均等割
 
 var OpenSpending = OpenSpending || {};
 
-OpenSpending.identifier = '2013date_fuku';
-OpenSpending.year = '2013';
+// OpenSpending.identifier = '2013date_fuku'; // 複数年度へ対応
+// OpenSpending.year = '2013'; // 複数年度へ対応
+
+OpenSpending.identifier = UseData.identifier; // 横手市Verより拝借
+OpenSpending.year = UseData.year; // 横手市Verより拝借
 
 OpenSpending.Styles = OpenSpending.Styles || {};
 
